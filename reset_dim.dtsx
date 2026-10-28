@@ -1,0 +1,72 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/28/2026 8:10:41 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MY-NAVI"
+  DTS:CreatorName="MY-NAVI\lain"
+  DTS:DTSID="{C907B2E8-56EA-40C6-9CDF-1B2AE73AAC15}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="reset_dim"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{BC47EC15-3D8F-4A33-964A-4DEAFE9E922A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.DW_RoadSafety]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{563687F9-71DC-4EA8-9205-10CBFEFD9ABB}"
+      DTS:ObjectName="localhost.DW_RoadSafety">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DW_RoadSafety;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{563687F9-71DC-4EA8-9205-10CBFEFD9ABB}localhost.DW_RoadSafety;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\R_DIMS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{003FD041-193D-4AB9-9165-BB6F1BA528B6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="R_DIMS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{563687F9-71DC-4EA8-9205-10CBFEFD9ABB}"
+          SQLTask:SqlStatementSource="DELETE FROM dbo.Dim_Time;&#xA;DELETE FROM dbo.Dim_Date;&#xA;DELETE FROM dbo.Dim_Location;&#xA;DELETE FROM dbo.Dim_Road;&#xA;DELETE FROM dbo.Dim_Conditions;&#xA;DELETE FROM dbo.Dim_Severity;&#xA;DELETE FROM dbo.Dim_Vehicle;&#xA;DELETE FROM dbo.Dim_Driver;&#xA;DELETE FROM dbo.Dim_Manoeuvre;&#xA;DELETE FROM dbo.Dim_Impact;&#xA;DELETE FROM dbo.Dim_Casualty;&#xA;DELETE FROM dbo.Dim_Position;&#xA;&#xA;DBCC CHECKIDENT ('dbo.Dim_Time', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Location', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Road', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Conditions', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Severity', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Vehicle', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Driver', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Manoeuvre', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Impact', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Casualty', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Position', RESEED, 0);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="121,42"
+          Id="Package\R_DIMS"
+          TopLeft="374,166" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
