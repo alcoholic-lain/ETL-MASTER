@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="reset_dim"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{BC47EC15-3D8F-4A33-964A-4DEAFE9E922A}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{761AA7D4-30C0-48F3-B05E-690A88A33775}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -45,7 +45,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{563687F9-71DC-4EA8-9205-10CBFEFD9ABB}"
-          SQLTask:SqlStatementSource="DELETE FROM dbo.Dim_Time;&#xA;DELETE FROM dbo.Dim_Date;&#xA;DELETE FROM dbo.Dim_Location;&#xA;DELETE FROM dbo.Dim_Road;&#xA;DELETE FROM dbo.Dim_Conditions;&#xA;DELETE FROM dbo.Dim_Severity;&#xA;DELETE FROM dbo.Dim_Vehicle;&#xA;DELETE FROM dbo.Dim_Driver;&#xA;DELETE FROM dbo.Dim_Manoeuvre;&#xA;DELETE FROM dbo.Dim_Impact;&#xA;DELETE FROM dbo.Dim_Casualty;&#xA;DELETE FROM dbo.Dim_Position;&#xA;&#xA;DBCC CHECKIDENT ('dbo.Dim_Time', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Location', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Road', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Conditions', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Severity', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Vehicle', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Driver', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Manoeuvre', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Impact', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Casualty', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Position', RESEED, 0);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Fact_Collision;&#xA;TRUNCATE TABLE dbo.Fact_Vehicle;&#xA;TRUNCATE TABLE dbo.Fact_Casualty;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;DELETE FROM dbo.Dim_Time;&#xA;DELETE FROM dbo.Dim_Date;&#xA;DELETE FROM dbo.Dim_Location;&#xA;DELETE FROM dbo.Dim_Road;&#xA;DELETE FROM dbo.Dim_Conditions;&#xA;DELETE FROM dbo.Dim_Severity;&#xA;DELETE FROM dbo.Dim_Vehicle;&#xA;DELETE FROM dbo.Dim_Driver;&#xA;DELETE FROM dbo.Dim_Manoeuvre;&#xA;DELETE FROM dbo.Dim_Impact;&#xA;DELETE FROM dbo.Dim_Casualty;&#xA;DELETE FROM dbo.Dim_Position;&#xA;&#xA;DBCC CHECKIDENT ('dbo.Dim_Time', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Location', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Road', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Conditions', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Severity', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Vehicle', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Driver', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Manoeuvre', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Impact', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Casualty', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Position', RESEED, 0);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
