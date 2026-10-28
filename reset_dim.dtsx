@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="reset_dim"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{761AA7D4-30C0-48F3-B05E-690A88A33775}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{E4C1DDEA-2632-4CC0-A9F1-318298146C7E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DW_RoadSafety;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{563687F9-71DC-4EA8-9205-10CBFEFD9ABB}localhost.DW_RoadSafety;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DW_BO2;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{563687F9-71DC-4EA8-9205-10CBFEFD9ABB}localhost.DW_RoadSafety;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -45,7 +45,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{563687F9-71DC-4EA8-9205-10CBFEFD9ABB}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Fact_Collision;&#xA;TRUNCATE TABLE dbo.Fact_Vehicle;&#xA;TRUNCATE TABLE dbo.Fact_Casualty;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;DELETE FROM dbo.Dim_Time;&#xA;DELETE FROM dbo.Dim_Date;&#xA;DELETE FROM dbo.Dim_Location;&#xA;DELETE FROM dbo.Dim_Road;&#xA;DELETE FROM dbo.Dim_Conditions;&#xA;DELETE FROM dbo.Dim_Severity;&#xA;DELETE FROM dbo.Dim_Vehicle;&#xA;DELETE FROM dbo.Dim_Driver;&#xA;DELETE FROM dbo.Dim_Manoeuvre;&#xA;DELETE FROM dbo.Dim_Impact;&#xA;DELETE FROM dbo.Dim_Casualty;&#xA;DELETE FROM dbo.Dim_Position;&#xA;&#xA;DBCC CHECKIDENT ('dbo.Dim_Time', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Location', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Road', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Conditions', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Severity', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Vehicle', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Driver', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Manoeuvre', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Impact', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Casualty', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Position', RESEED, 0);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Fact_Collision;&#xA;TRUNCATE TABLE dbo.Fact_Casualty;&#xA;&#xA;DELETE FROM dbo.Dim_Time;&#xA;DELETE FROM dbo.Dim_Date;&#xA;DELETE FROM dbo.Dim_Location;&#xA;DELETE FROM dbo.Dim_Road;&#xA;DELETE FROM dbo.Dim_Conditions;&#xA;DELETE FROM dbo.Dim_Severity;&#xA;DELETE FROM dbo.Dim_Casualty;&#xA;DELETE FROM dbo.Dim_Position;&#xA;&#xA;DBCC CHECKIDENT ('dbo.Dim_Time', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Location', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Road', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Conditions', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Severity', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Casualty', RESEED, 0);&#xA;DBCC CHECKIDENT ('dbo.Dim_Position', RESEED, 0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -62,7 +62,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="121,42"
+          Size="120.8,41.6"
           Id="Package\R_DIMS"
           TopLeft="374,166" />
       </GraphLayout>
